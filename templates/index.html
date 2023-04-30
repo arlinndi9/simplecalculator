@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+      <style>
+          .calculator {
+  display: inline-block;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.calculator #screen {
+  width: 100%;
+  height: 50px;
+  font-size: 24px;
+  padding: 5px;
+  margin-bottom: 10px;
+  text-align: right;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.calculator .row {
+  margin-bottom: 10px;
+}
+
+.calculator button {
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.calculator button:hover {
+  background-color: #ddd;
+}
+      </style>
+  </head>
+  <body>
+    <div class="calculator">
+        <form method="post" autocomplete="off">
+            {% csrf_token %}
+            <label>Num1</label>
+            <input type="number" name="num1" id="num1">
+             <label>Num2</label>
+            <input type="number" name="num2" id="num2">
+
+          <button type="submit" name="add">ADD</button>
+          <button type="submit" name="sub">SUB</button>
+          <button type="submit" name="mul">MUL</button>
+          <button type="submit" name="div">DIV</button>
+            <p>NUM1: {{ num1 }} NUM2: {{ num2 }} Result: {{ result }}</p>
+
+        </form>
+    </div>
+
+  </body>
+</html>
