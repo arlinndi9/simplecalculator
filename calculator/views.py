@@ -23,8 +23,3 @@ def index(request):
         return render(request, 'index.html', context)
     else:
         return render(request, 'index.html')
-
-    context = {'result': result,
-               'num1':num1,
-               'num2':num2}
-    return render(request, 'index.html',context)
